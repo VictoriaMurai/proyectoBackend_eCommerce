@@ -1,9 +1,12 @@
+import express from "express"
 import fs from "fs"
+import { get } from "http"
+//const { Blob } = require("buffer")
 
 class ProductManager {
 
     constructor() {
-        this.path = "./files/Products.json"
+        this.path = "../files/Products.json"
         this.products = []
     }
 
@@ -33,18 +36,19 @@ class ProductManager {
         for(const key in product) {
             if(product[key] === "") {
                 console.log(`Error: ${key} is blank. All fields should be completed to add a new product.`)
-                return
+                return products
             }
         }
 
         const codeRepeated = await this.products.find((product) => product.code === code)
         if(codeRepeated) {
-            console.log("Error: A product already exists for this code.")
-            return
+        console.log("Error: A product already exists for this code.")
+        return
+
         }
         else{
             products.push(product)
-            fs.promises.writeFile(this.path, JSON.stringify(products, null, "\t"))
+            await fs.promises.writeFile(this.path, JSON.stringify(products, null, "\t"))
             return product
         }
     }
@@ -56,41 +60,53 @@ class ProductManager {
         if(productById == "") {
             console.log("Product not found")
         }
-        else return JSON.parse(productById)
+        else return productById
         console.log(productById)
     }
 
 
     updateProduct = async (productId, changes) => {
-        const products = await this.getProducts()
-        const productById = products.filter(product => product.id === productId)
-        
-
-
-
-
-
-    }
-
-
-    deleteProduct = async (productId) => {
-        let products = await this.getProducts()
-        const productById = products.filter(product => product.id === productId)
+        const productById = await this.getProductById(productId) 
 
         if(productById == "") {
             console.log("Product not found")
         }
         else {
-        let newArray = products.filter((array) => array != productById)
-        this.products = newArray
-        await fs.promises.writeFile(this.path, JSON.stringify(newArray, null, "\t"))
-        console.log(newArray)
+        const updatedProduct = {
+            code: code ?? productById[0].code,
+            title: title ?? productById[0].title,
+            description: description ?? productById[0].description,
+            price: price ?? productById[0].price,
+            thumbnail: thumbnail ?? productById[0].thumbnail,
+            stock: stock ?? productById[0].stock,
+            id: id
+        }
+
+        products[id - 1] = updatedProduct
+
+        
+        await fs.promises.writeFile(this.path, JSON.stringify(this.products, null, "\t"))
+        return "Product Updated"
+        }
+
+    }
+
+
+    deleteProduct = async (productId) => {
+
+        const productById = await this.getProductById(productId)
+
+        if (productById != undefined) {
+            const products = await this.getProducts()
+            const newArray = products.filter((product) => product.id != productId)
+
+            await fs.promises.writeFile(this.path, JSON.stringify(newArray, null, "\t"))
+            console.log(newArray)
+            return newArray
         }
     }
+
+
 }
-
-
-
-
 
 export default ProductManager

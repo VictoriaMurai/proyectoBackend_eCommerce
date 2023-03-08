@@ -1,21 +1,12 @@
 [
 	{
-		"title": "Test product 2",
-		"description": "This is test product 2",
-		"price": 450,
-		"thumnail": "No image",
-		"code": "def456",
-		"stock": 30,
-		"id": 1
-	},
-	{
 		"title": "Test product 1",
 		"description": "This is test product 1",
 		"price": 200,
 		"thumnail": "No image",
 		"code": "abc123",
 		"stock": 25,
-		"id": 2
+		"id": 1
 	},
 	{
 		"title": "Test product 2",
@@ -24,6 +15,78 @@
 		"thumnail": "No image",
 		"code": "def456",
 		"stock": 30,
+		"id": 2
+	},
+	{
+		"title": "Test product 3",
+		"description": "This is test product 3",
+		"price": 200,
+		"thumnail": "No image",
+		"code": "ghi456",
+		"stock": 25,
 		"id": 3
+	},
+	{
+		"title": "Test product 4",
+		"description": "This is test product 4",
+		"price": 450,
+		"thumnail": "No image",
+		"code": "els947",
+		"stock": 30,
+		"id": 4
+	},
+	{
+		"title": "Test product 5",
+		"description": "This is test product 1",
+		"price": 200,
+		"thumnail": "No image",
+		"code": "aiy266",
+		"stock": 25,
+		"id": 5
+	},
+	{
+		"title": "Test product 6",
+		"description": "This is test product 2",
+		"price": 450,
+		"thumnail": "No image",
+		"code": "vft777",
+		"stock": 30,
+		"id": 6
+	},
+	{
+		"title": "Test product 7",
+		"description": "This is test product 1",
+		"price": 200,
+		"thumnail": "No image",
+		"code": "dre463",
+		"stock": 25,
+		"id": 7
+	},
+	{
+		"title": "Test product 8",
+		"description": "This is test product 4",
+		"price": 450,
+		"thumnail": "No image",
+		"code": "mnl732",
+		"stock": 30,
+		"id": 8
+	},
+	{
+		"title": "Test product 9",
+		"description": "This is test product 1",
+		"price": 200,
+		"thumnail": "No image",
+		"code": "opq334",
+		"stock": 25,
+		"id": 9
+	},
+	{
+		"title": "Test product 10",
+		"description": "This is test product 2",
+		"price": 450,
+		"thumnail": "No image",
+		"code": "rst564",
+		"stock": 30,
+		"id": 10
 	}
 ]
