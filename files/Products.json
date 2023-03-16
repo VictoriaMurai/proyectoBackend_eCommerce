@@ -1,92 +1,112 @@
 [
 	{
-		"title": "Test product 1",
-		"description": "This is test product 1",
-		"price": 200,
-		"thumnail": "No image",
+		"id": 1,
+		"title": "Zapatos de Jazz",
+		"description": "Zapatos de baile",
 		"code": "abc123",
+		"price": 200,
+		"status": true,
 		"stock": 25,
-		"id": 1
+		"category": "Calzado",
+		"thumnail": "No image"
 	},
 	{
-		"title": "Test product 2",
-		"description": "This is test product 2",
-		"price": 450,
-		"thumnail": "No image",
+		"id": 2,
+		"title": "Zapatos de Tap",
+		"description": "Zapatos de baile",
 		"code": "def456",
+		"price": 150,
+		"status": true,
+		"stock": 16,
+		"category": "Calzado",
+		"thumnail": "No image"
+	},
+	{
+		"id": 3,
+		"title": "Calzas biker",
+		"description": "Calzas deportivas biker",
+		"code": "ghi789",
+		"price": 130,
+		"status": true,
+		"stock": 12,
+		"category": "Indumentaria",
+		"thumnail": "No image"
+	},
+	{
+		"id": 4,
+		"title": "Top deportivo",
+		"description": "Top deportivo",
+		"code": "jsk987",
+		"price": 90,
+		"status": true,
+		"stock": 15,
+		"category": "Indumentaria",
+		"thumnail": "No image"
+	},
+	{
+		"id": 5,
+		"title": "Remera",
+		"description": "Remera",
+		"code": "jut635",
+		"price": 55,
+		"status": true,
 		"stock": 30,
-		"id": 2
+		"category": "Indumentaria",
+		"thumnail": "No image"
 	},
 	{
-		"title": "Test product 3",
-		"description": "This is test product 3",
-		"price": 200,
-		"thumnail": "No image",
-		"code": "ghi456",
-		"stock": 25,
-		"id": 3
+		"id": 6,
+		"title": "Musculosa",
+		"description": "Musculosa",
+		"code": "lak538",
+		"price": 79,
+		"status": true,
+		"stock": 10,
+		"category": "Indumentaria",
+		"thumnail": "No image"
 	},
 	{
-		"title": "Test product 4",
-		"description": "This is test product 4",
-		"price": 450,
-		"thumnail": "No image",
-		"code": "els947",
-		"stock": 30,
-		"id": 4
+		"id": 7,
+		"title": "Short deportivo",
+		"description": "Short deportivo running",
+		"code": "adg783",
+		"price": 139,
+		"status": true,
+		"stock": 8,
+		"category": "Indumentaria",
+		"thumnail": "No image"
 	},
 	{
-		"title": "Test product 5",
-		"description": "This is test product 1",
-		"price": 200,
-		"thumnail": "No image",
-		"code": "aiy266",
-		"stock": 25,
-		"id": 5
+		"id": 8,
+		"title": "Riñonera",
+		"description": "Riñonera",
+		"code": "agr425",
+		"price": 210,
+		"status": true,
+		"stock": 23,
+		"category": "Accesorios",
+		"thumnail": "No image"
 	},
 	{
-		"title": "Test product 6",
-		"description": "This is test product 2",
-		"price": 450,
-		"thumnail": "No image",
-		"code": "vft777",
-		"stock": 30,
-		"id": 6
+		"id": 9,
+		"title": "Mochila",
+		"description": "Mochila",
+		"code": "ind743",
+		"price": 300,
+		"status": true,
+		"stock": 21,
+		"category": "Accesorios",
+		"thumnail": "No image"
 	},
 	{
-		"title": "Test product 7",
-		"description": "This is test product 1",
-		"price": 200,
-		"thumnail": "No image",
-		"code": "dre463",
-		"stock": 25,
-		"id": 7
-	},
-	{
-		"title": "Test product 8",
-		"description": "This is test product 4",
-		"price": 450,
-		"thumnail": "No image",
-		"code": "mnl732",
-		"stock": 30,
-		"id": 8
-	},
-	{
-		"title": "Test product 9",
-		"description": "This is test product 1",
-		"price": 200,
-		"thumnail": "No image",
-		"code": "opq334",
-		"stock": 25,
-		"id": 9
-	},
-	{
-		"title": "Test product 10",
-		"description": "This is test product 2",
-		"price": 450,
-		"thumnail": "No image",
-		"code": "rst564",
-		"stock": 30,
-		"id": 10
+		"id": 10,
+		"title": "Rodilleras",
+		"description": "Rodilleras",
+		"code": "hnd852",
+		"price": 30,
+		"status": true,
+		"stock": 5,
+		"category": "Accesorios",
+		"thumnail": "No image"
 	}
 ]
