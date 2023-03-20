@@ -6,7 +6,7 @@ import { get } from "http"
 class ProductManager {
 
     constructor() {
-        this.path = "./files/Products.json"
+        this.path = "./files/products.json"
         this.products = []
     }
 
@@ -15,12 +15,22 @@ class ProductManager {
         if(fs.existsSync(this.path)) {
             const data = await fs.promises.readFile(this.path, "utf-8")
             const result = JSON.parse(data)
-            //console.log(result)
             return result
         }
         else {
             return []
         }
+    }
+
+    getProductById = async (productId) => {
+        const products = await this.getProducts()
+        let productById = products.filter(product => product.id === parseInt(productId))
+
+        if(productById == "") {
+            console.log("Product not found")
+        }
+        else return productById
+        console.log(productById)
     }
 
     addProduct = async (product) => {
@@ -40,30 +50,17 @@ class ProductManager {
             }
         }
 
-        const codeRepeated = await this.products.find((product) => product.code === code)
+        const codeRepeated = await this.products.find((product) => product.code == code)
+
         if(codeRepeated) {
         console.log("Error: A product already exists for this code.")
         return
-
-        }
-        else{
+        } else {
             products.push(product)
             await fs.promises.writeFile(this.path, JSON.stringify(products, null, "\t"))
             return product
         }
     }
-
-    getProductById = async (productId) => {
-        const products = await this.getProducts()
-        let productById = products.filter(product => product.id === parseInt(productId))
-
-        if(productById == "") {
-            console.log("Product not found")
-        }
-        else return productById
-        console.log(productById)
-    }
-
 
     updateProduct = async (productId, changes) => {
         const productById = await this.getProductById(productId)
@@ -92,23 +89,27 @@ class ProductManager {
         return "Product updated"
     }
 
-
     deleteProduct = async (productId) => {
 
-        const productById = await this.getProductById(productId)
+        //const productId = req.params.id
+        const products = await this.getProducts()
+        const productIndex = products.findIndex((u) => u.id == productId)
+
+        products.splice(productIndex, 1)
+        await fs.promises.writeFile(this.path, JSON.stringify(products, null, "\t"))
+        return
+        
+
+        /*
 
         if (productById === -1) {
             return res
             .status(404)
             .send({ status: "Error", message: "Product does not exist" });
         }
+        */
     
-        this.products.splice(productId, 1);
-
-        await fs.promises.writeFile(this.path, JSON.stringify(this.products, null, "\t"))
-        return res
     }
-
 }
 
 export default ProductManager

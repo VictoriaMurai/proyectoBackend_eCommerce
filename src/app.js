@@ -1,6 +1,6 @@
 import express from "express"
-import productsRouter from "./routes/products.router.js"
-import cartRouter from "./routes/cart.router.js"
+import productRouter from "./routes/products.router.js"
+import cartsRouter from "./routes/carts.router.js"
 import __dirname from "./utils.js"
 
 
@@ -13,5 +13,5 @@ const server = app.listen(8080, () => {
     console.log("Listening on port 8080")
 })
 
-app.use("/api/products", productsRouter)
-app.use("/api/cart", cartRouter)
+app.use("/api/products", productRouter)
+app.use("/api/carts", cartsRouter)
