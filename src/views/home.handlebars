@@ -1,0 +1,10 @@
+<div>
+    <h1>Lista de productos estáticos</h1>
+        {{#each products}}
+            <div>
+                <p>Producto: {{this.title}}</p>
+                <p>Precio: ${{this.price}}</p>
+            </div>
+        {{/each}}
+</div>
+<script src="/js/index.js"></script>

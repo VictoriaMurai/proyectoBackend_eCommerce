@@ -1,0 +1,12 @@
+<div id = "products">
+    <h1>Lista de productos dinámicos</h1>
+        {{#each products}}
+            <div>
+                <p>Producto: {{this.title}}</p>
+                <p>Precio: ${{this.price}}</p>
+            </div>
+        {{/each}}
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

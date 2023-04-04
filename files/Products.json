@@ -108,5 +108,15 @@
 		"stock": 5,
 		"category": "Accesorios",
 		"thumnail": "No image"
+	},
+	{
+		"title": "Test product 11",
+		"description": "Test product 11",
+		"code": "lll852",
+		"price": 30,
+		"stock": 5,
+		"category": "Accesorios",
+		"thumnail": "No image",
+		"id": 11
 	}
 ]

@@ -2,6 +2,7 @@ import express from "express"
 import fs from "fs"
 import { get } from "http"
 //const { Blob } = require("buffer")
+import socket from "./socket.js"
 
 class ProductManager {
 
@@ -14,6 +15,18 @@ class ProductManager {
 
         if(fs.existsSync(this.path)) {
             const data = await fs.promises.readFile(this.path, "utf-8")
+            const result = JSON.parse(data)
+            return result
+        }
+        else {
+            return []
+        }
+    }
+
+    getStaticProducts = () => {
+
+        if(fs.existsSync(this.path)) {
+            const data = fs.readFileSync(this.path, "utf-8")
             const result = JSON.parse(data)
             return result
         }
@@ -58,6 +71,9 @@ class ProductManager {
         } else {
             products.push(product)
             await fs.promises.writeFile(this.path, JSON.stringify(products, null, "\t"))
+
+            socket.io.emit("product_added", product)
+
             return product
         }
     }
@@ -97,17 +113,10 @@ class ProductManager {
 
         products.splice(productIndex, 1)
         await fs.promises.writeFile(this.path, JSON.stringify(products, null, "\t"))
-        return
         
-
-        /*
-
-        if (productById === -1) {
-            return res
-            .status(404)
-            .send({ status: "Error", message: "Product does not exist" });
-        }
-        */
+        socket.io.emit("product_deleted", productIndex)
+        
+        return
     
     }
 }
